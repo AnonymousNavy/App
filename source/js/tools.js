@@ -36,12 +36,12 @@ function init(){
 	}, 1000);
 
 	//device size 적용
+	document.getElementById('background_repeat').style.height = '305px';
+	
 	var mobile_size = getParameter('mobile_size');
 	if(mobile_size != null && mobile_size.length > 0){
 		document.getElementById('mobile_size_input').value = mobile_size;
-		adapt_page(mobile_size);
-	}else{
-		adapt_page(305);
+		document.getElementById('background_repeat').style.height = mobile_size + 'px';
 	}
 }
 function getParameter(name) {
@@ -100,6 +100,8 @@ function refine_time(time){
 	}
 	return time*1;
 };
+
+//폐기할 스크립트
 function adapt_page(device_size){
 	var top = document.getElementById('background_top').height * 1;
 	var bottom = document.getElementById('background_top').height * 1;
