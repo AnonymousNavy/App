@@ -193,7 +193,7 @@ function add_log(){
 	
 	var device_maker = document.getElementById('device_maker_input').value;
 	var device_os = document.getElementById('device_os_input').value;
-	var log_contents = document.getElementsByName('log_contents').value;
+	var log_contents = document.getElementById('log_contents_input').value;
 
 	var log_status;
 	var obj_length = document.getElementsByName('log_status').length;
