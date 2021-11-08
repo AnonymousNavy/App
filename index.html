@@ -63,7 +63,7 @@
 		img.infinite_rotating_logo {
 			animation: rotate_image 4s linear infinite;
 			transform-origin: 50% 50%;
-			
+
 		}
 
 		@keyframes rotate_image {
@@ -136,6 +136,23 @@
 			left: 50vw;
 			height: 60vw;
 		}
+
+		#myBtn {
+			position: relative;
+			height: 15vw;
+			width: 16vw;
+			top: 3vw;
+			left: 50vw;
+			transform: translateX(-50%);
+		}
+
+		#hamburger {
+			position: absolute;
+			height: 10vw;
+			width: 14vw;
+			top: 5vw;
+			left: 5vw;
+		}
 	</style>
 
 
@@ -154,8 +171,7 @@
 		</div>
 		<div style="position: absolute;">
 			<div style="position: absolute;">
-				<img class="camera_img" src="source/img/modi_cam.png"
-					>
+				<img class="camera_img" src="source/img/modi_cam.png">
 			</div>
 			<div style="position: absolute;">
 				<img class="loading_img infinite_rotating_logo" src="source/img/-06-28_19.51.08-removebg-preview.png"
@@ -165,19 +181,16 @@
 
 		<div id="myBtn" style="position: relative; height:50px; width: 50px; top: 13px; left:170px;">
 		</div>
-		<div class="date_time_txt_install"
-			>
+		<div class="date_time_txt_install">
 			<span class="date_time_txt" id="install_date"></span>
 		</div>
-		<div class="date_time_txt_block" >
+		<div class="date_time_txt_block">
 			<span class="date_time_txt" id="block_date"></span>
 		</div>
-		<div class="date_time_txt_sub"
-			>
-			<span class="date_time_txt" id="sub_date" ></span>
+		<div class="date_time_txt_sub">
+			<span class="date_time_txt" id="sub_date"></span>
 		</div>
-		<div style="position: relative; height:38px; width: 50px; top: -187px; left:23px;"
-			onclick="changePage('page_menu');">
+		<div id="hamburger" onclick="changePage('page_menu');">
 		</div>
 	</div>
 	<div id="page_menu" style="display:none;">
