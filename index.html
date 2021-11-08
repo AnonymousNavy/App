@@ -1,254 +1,332 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
-		<meta name="apple-mobile-web-app-capable" content="yes"/>
-		<meta name="apple-mobile-web-app-title" content="국방모바일보안"/>
-		<meta name="mobile-web-app-capable" content="yes"/>
-		<meta name="mobile-web-app-title" content="국방모바일보안"/>
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-		
-		<meta name="msapplication-TileColor" content="#000000"/>
-		<meta name="msapplication-TileImage" content="source/img/favcon/ms-icon-144x144.png"/>
-		<meta name="theme-color" content="#000000"/>
-		
-		<meta name="mobile-web-app-capable" content="yes"/>
-		<link rel="shortcut icon" sizes="192x192" href="./images/android.png">
+<head>
+	<meta name="viewport"
+		content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-title" content="국방모바일보안" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="mobile-web-app-title" content="국방모바일보안" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 
+	<meta name="msapplication-TileColor" content="#000000" />
+	<meta name="msapplication-TileImage" content="source/img/favcon/ms-icon-144x144.png" />
+	<meta name="theme-color" content="#000000" />
 
-	
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="source/css/modal.css">
-		<!-- <script type="text/javascript" src="/js/pack/base.min.js?v=537e094e8"></script> -->
-		<script type="text/javascript" src="source/js/tools.js"></script>
-		<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-		
-		<!-- favcon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="source/img/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="source/img/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="source/img/favicon/favicon-16x16.png">
-		
-		
-		<script type="text/javascript">
-			let pw = "";
-			
-			let login_fail = true;
-			
-			if(getParameter('pw') == 'robert'){
+	<meta name="mobile-web-app-capable" content="yes" />
+	<link rel="shortcut icon" sizes="192x192" href="./images/android.png">
+
+
+
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="source/css/modal.css">
+	<!-- <script type="text/javascript" src="/js/pack/base.min.js?v=537e094e8"></script> -->
+	<script type="text/javascript" src="source/js/tools.js"></script>
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<!-- favcon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="source/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="source/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="source/img/favicon/favicon-16x16.png">
+
+
+	<script type="text/javascript">
+		let pw = "";
+
+		let login_fail = true;
+
+		if (getParameter('pw') == 'robert') {
+			login_fail = false;
+		} else {
+			pw = prompt('ㅂㅁㅂㅎ?');
+			if (pw == 'robert') {
 				login_fail = false;
-			}else{
-				pw = prompt('ㅂㅁㅂㅎ?');
-				if(pw == 'robert'){
-					login_fail = false;
-				}
 			}
-			
-			$( document ).ready(function() {
-				if(login_fail){
-					location.href = 'http://www.warning.or.kr/';
-				}
-				
-				init();
-			});
-			
-			
-			
-		</script>
-		
-		<style>
-			img.infinite_rotating_logo{
-				animation: rotate_image 2.3s linear infinite;
-				transform-origin: 50% 50%;
-				height: 265px
+		}
+
+		$(document).ready(function () {
+			if (login_fail) {
+				location.href = 'http://www.warning.or.kr/';
 			}
 
-			@keyframes rotate_image{
-				100% {
-					transform: rotate(360deg);
-				}
-			} 
-			
-			body {
-				margin:0px;
-				overflow: hidden;
-				touch-action: none;
+			init();
+		});
+
+
+
+	</script>
+
+	<style>
+		img.infinite_rotating_logo {
+			animation: rotate_image 4s linear infinite;
+			transform-origin: 50% 50%;
+			height: 265px
+		}
+
+		@keyframes rotate_image {
+			0% {
+				transform: translateX(-50%) rotate(0deg);
 			}
-			
-			.date_time_txt {
-				color: white;
-				font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif;
+
+			100% {
+				transform: translateX(-50%) rotate(360deg);
 			}
-			
-			.menu_txt {
-				color: #AAAAAA;
-				font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif;
-				font-size: 17px;
-			}
-		</style>
-		
-		
-	</head>
-	<body bgcolor='black'>
-		<div id="page_main">
+		}
+
+		body {
+			margin: 0px;
+			overflow: hidden;
+			touch-action: none;
+		}
+
+		.date_time_txt {
+			color: white;
+			font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif;
+		}
+
+		.menu_txt {
+			color: #AAAAAA;
+			font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif;
+			font-size: 17px;
+		}
+
+		.date_time_txt_install {
+			font-weight: bold;
+			font-size: 7vw;
+			position: absolute;
+			top: 26vw;
+			left: 41vw;
+		}
+
+		.date_time_txt_block {
+			font-weight: bold;
+			font-size: 7vw;
+			position: absolute;
+			top: 36vw;
+			left: 41vw;
+
+		}
+
+		.date_time_txt_sub {
+			font-size: 4.1vw;
+			position: absolute;
+			height: 10vw;
+			width: 20vw;
+			top: 111vw;
+			left: 50vw;
+			display: inline-block;
+			text-align: center;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		.camera_img {
+			position: relative;
+			top: 79.3vw;
+			left: 50vw;
+			height: 44vw;
+			transform: translateX(-50%);
+		}
+
+		.loading_img {
+			position: relative;
+			top: 71vw;
+			left: 50vw;
+			height: 60vw;
+		}
+	</style>
+
+
+</head>
+
+<body bgcolor='black'>
+	<div id="page_main">
+		<div style="position: absolute;">
+			<!-- <img src="source/img/app_background.png" style="position: relative; top: 0px; left: 0px; width=100%"> -->
+			<img src="source/img/background/app_background_top.PNG" id="background_top"
+				style="position: relative; top: 0px; left: 0px; width:100%; height:100%;">
+			<img src="source/img/background/app_background_repeat.PNG" id="background_repeat"
+				style="position: relative; top: -6px; left: 0px; width:100%;">
+			<img src="source/img/background/app_background_bottom.PNG" id="background_bottom"
+				style="position: relative; top: -12px; left: 0px; width:100%; height:100%;">
+		</div>
+		<div style="position: absolute;">
 			<div style="position: absolute;">
-				<!-- <img src="source/img/app_background.png" style="position: relative; top: 0px; left: 0px; width=100%"> -->
-				<img src="source/img/background/app_background_top.PNG" id="background_top" style="position: relative; top: 0px; left: 0px; width:100%; height:100%;">
-				<img src="source/img/background/app_background_repeat.PNG" id="background_repeat" style="position: relative; top: -6px; left: 0px; width:100%;">
-				<img src="source/img/background/app_background_bottom.PNG" id="background_bottom" style="position: relative; top: -12px; left: 0px; width:100%; height:100%;">
+				<img class="camera_img" src="source/img/modi_cam.png"
+					>
 			</div>
 			<div style="position: absolute;">
-				<div style="position: absolute;">
-					<img src="source/img/modi_cam.png" style="position: relative; top: 330px; left: 94px; height:195px">
-				</div>
-				<div style="position: absolute;">
-					<img src="source/img/-06-28_19.51.08-removebg-preview.png" class="infinite_rotating_logo" style="position: relative; top: 293px; left: 59px">
-				</div>
-			</div>
-			
-			<div id="myBtn" style="position: relative; height:50px; width: 50px; top: 13px; left:170px;">
-			</div>
-			<div style="position: relative; height:50px; width: 180px; top: 51px; left:152px;">
-				<span class="date_time_txt" id="install_date"style="font-weight: bold;font-size: 25px;"></span>
-			</div>
-			<div style="position: relative; height:50px; width: 180px; top: 40px; left:152px;">
-				<span class="date_time_txt" id="block_date" style="font-weight: bold;font-size: 25px;"></span>
-			</div>
-			<div style="position: relative; height:50px; width: 180px; top: 297.5px; left:109px; display: inline-block; text-align: center;">
-				<span class="date_time_txt" id="sub_date" style="font-size: 17.7px;"></span>
-			</div>
-			<div style="position: relative; height:38px; width: 50px; top: -187px; left:23px;" onclick="changePage('page_menu');">
+				<img class="loading_img" src="source/img/-06-28_19.51.08-removebg-preview.png"
+					class="infinite_rotating_logo">
 			</div>
 		</div>
-		<div id="page_menu" style="display:none;">
-			<div style="position: absolute;">
-					<img src="source/img/menu_background.png" style="position: relative;width: 100%;">
-			</div>
-			<div style="position: absolute;">
-					<img src="source/img/-06-28_19.51.08-removebg-preview.png" class="infinite_rotating_logo" style="position: relative; top: 289px; left: 354px">
-			</div>
-			<div style="position: relative; height:810px; width: 75px; top: 0px; left:300px;" onclick="changePage('page_main');">
-			</div>
-			<div style="position: relative; height:32px; width: 33px; top: -789px; left:253px;" onclick="changePage('page_main');">
-			</div>
-			<div style="position: relative; width: 295px; top: -590px; left:0px; height: 40px;" onclick="changePage('page_guide1');">
-			</div>
-			<div style="position: relative; width: 295px; top: -588px; left:0px; height: 40px;" onclick="changePage('page_log');">
-			</div>
-			<div style="position: relative; width: 295px; top: -468px; left:0px; height: 40px;" onclick="changePage('page_location');">
-			</div>
-			<div style="position: relative; width: 155px; top: -412px; left:130px; display: inline-block; text-align: right;">
-						<span class="menu_txt" id="device_maker">제조사</span>
-			</div>
-			<div style="position: relative; width: 155px; top: -368px; left:-30px; display: inline-block; text-align: right;">
-					<span class="menu_txt" id="device_model">모델명</span>
-			</div>
-			<div style="position: relative; width: 155px; top: -345px; left:126px; display: inline-block; text-align: right;">
-					<span class="menu_txt"  id="device_os">os버전</span>
-			</div>
+
+		<div id="myBtn" style="position: relative; height:50px; width: 50px; top: 13px; left:170px;">
 		</div>
-		
-		<div id="page_guide1" style="display:none;">
-			<div style="position: absolute;">
-					<img src="source/img/guide1_background.png" style="position: relative;width: 100%;">
-			</div>
-			<div style="position: relative; width: 105px; height: 36px; top: 700px; left: 40px;" onclick="changePage('page_main');">
-			</div>
-			<div style="position: relative; width: 105px; height: 36px; top: 665px; left: 235px;" onclick="changePage('page_guide2');">
-			</div>
+		<div class="date_time_txt_install"
+			>
+			<span class="date_time_txt" id="install_date"></span>
 		</div>
-		<div id="page_guide2" style="display:none;">
-			<div style="position: absolute;">
-					<img src="source/img/guide2_background.png" style="position: relative;width: 100%;">
-			</div>
-			<div style="position: relative; width: 105px; height: 36px; top: 700px; left: 40px;" onclick="changePage('page_main');">
-			</div>
-			<div style="position: relative; width: 105px; height: 36px; top: 665px; left: 235px;" onclick="changePage('page_guide3');">
-			</div>
+		<div class="date_time_txt_block" >
+			<span class="date_time_txt" id="block_date"></span>
 		</div>
-		<div id="page_guide3" style="display:none;">
-			<div style="position: absolute;">
-				<img src="source/img/guide3_background.png" style="position: relative;width: 100%;">
-			</div>
-			<div style="position: relative; width: 105px; height: 36px; top: 701px; left: 235px;" onclick="changePage('page_main');">
-			</div>
+		<div class="date_time_txt_sub"
+			>
+			<span class="date_time_txt" id="sub_date" ></span>
 		</div>
-		<div id="page_log" style="display:none;">
-			<div style="position: absolute;">
-				<img src="source/img/log_background.png" style="position: relative;width: 100%;">
-			</div>
-			<div style="position: relative; width: 39px; height: 31px; top: 37px; left: 11px;" onclick="changePage('page_main');">
-			</div>
-			<div style="position: relative; width: 375px; height: 695px; top: 59px; text-align: -webkit-center; overflow: hidden; " id="log_body">
-				
-			</div>
+		<div style="position: relative; height:38px; width: 50px; top: -187px; left:23px;"
+			onclick="changePage('page_menu');">
 		</div>
-		<div id="page_location" style="display:none;">
-			<div style="position: absolute;">
-				<img src="source/img/location_background.png" style="position: relative;width: 100%;">
-			</div>
-			<div style="position: relative; width: 39px; height: 31px; top: 37px; left: 11px;" onclick="changePage('page_main');">
-			</div>
-			
+	</div>
+	<div id="page_menu" style="display:none;">
+		<div style="position: absolute;">
+			<img src="source/img/menu_background.png" style="position: relative;width: 100%;">
 		</div>
-		
-		<!-- modal -->
-		<div id="myModal" class="modal">
+		<div style="position: absolute;">
+			<img src="source/img/-06-28_19.51.08-removebg-preview.png" class="infinite_rotating_logo"
+				style="position: relative; top: 289px; left: 354px">
+		</div>
+		<div style="position: relative; height:810px; width: 75px; top: 0px; left:300px;"
+			onclick="changePage('page_main');">
+		</div>
+		<div style="position: relative; height:32px; width: 33px; top: -789px; left:253px;"
+			onclick="changePage('page_main');">
+		</div>
+		<div style="position: relative; width: 295px; top: -590px; left:0px; height: 40px;"
+			onclick="changePage('page_guide1');">
+		</div>
+		<div style="position: relative; width: 295px; top: -588px; left:0px; height: 40px;"
+			onclick="changePage('page_log');">
+		</div>
+		<div style="position: relative; width: 295px; top: -468px; left:0px; height: 40px;"
+			onclick="changePage('page_location');">
+		</div>
+		<div
+			style="position: relative; width: 155px; top: -412px; left:130px; display: inline-block; text-align: right;">
+			<span class="menu_txt" id="device_maker">제조사</span>
+		</div>
+		<div
+			style="position: relative; width: 155px; top: -368px; left:-30px; display: inline-block; text-align: right;">
+			<span class="menu_txt" id="device_model">모델명</span>
+		</div>
+		<div
+			style="position: relative; width: 155px; top: -345px; left:126px; display: inline-block; text-align: right;">
+			<span class="menu_txt" id="device_os">os버전</span>
+		</div>
+	</div>
+
+	<div id="page_guide1" style="display:none;">
+		<div style="position: absolute;">
+			<img src="source/img/guide1_background.png" style="position: relative;width: 100%;">
+		</div>
+		<div style="position: relative; width: 105px; height: 36px; top: 700px; left: 40px;"
+			onclick="changePage('page_main');">
+		</div>
+		<div style="position: relative; width: 105px; height: 36px; top: 665px; left: 235px;"
+			onclick="changePage('page_guide2');">
+		</div>
+	</div>
+	<div id="page_guide2" style="display:none;">
+		<div style="position: absolute;">
+			<img src="source/img/guide2_background.png" style="position: relative;width: 100%;">
+		</div>
+		<div style="position: relative; width: 105px; height: 36px; top: 700px; left: 40px;"
+			onclick="changePage('page_main');">
+		</div>
+		<div style="position: relative; width: 105px; height: 36px; top: 665px; left: 235px;"
+			onclick="changePage('page_guide3');">
+		</div>
+	</div>
+	<div id="page_guide3" style="display:none;">
+		<div style="position: absolute;">
+			<img src="source/img/guide3_background.png" style="position: relative;width: 100%;">
+		</div>
+		<div style="position: relative; width: 105px; height: 36px; top: 701px; left: 235px;"
+			onclick="changePage('page_main');">
+		</div>
+	</div>
+	<div id="page_log" style="display:none;">
+		<div style="position: absolute;">
+			<img src="source/img/log_background.png" style="position: relative;width: 100%;">
+		</div>
+		<div style="position: relative; width: 39px; height: 31px; top: 37px; left: 11px;"
+			onclick="changePage('page_main');">
+		</div>
+		<div style="position: relative; width: 375px; height: 695px; top: 59px; text-align: -webkit-center; overflow: hidden; "
+			id="log_body">
+
+		</div>
+	</div>
+	<div id="page_location" style="display:none;">
+		<div style="position: absolute;">
+			<img src="source/img/location_background.png" style="position: relative;width: 100%;">
+		</div>
+		<div style="position: relative; width: 39px; height: 31px; top: 37px; left: 11px;"
+			onclick="changePage('page_main');">
+		</div>
+
+	</div>
+
+	<!-- modal -->
+	<div id="myModal" class="modal">
 		<div class="modal-content">
-			<span class="close">&times;</span>                                                               
+			<span class="close">&times;</span>
 			<form action="">
-				mobile_size(num) : <input type="text" name="mobile_size" value="305" id="mobile_size_input"><br/>
-				device_maker : <input type="text" name="device_maker" id="device_maker_input"><br/>
-				device_model : <input type="text" name="device_model" id="device_model_input"><br/>
-				device_os : <input type="text" name="device_os" id="device_os_input"><br/>
-				install_date(ex. 21.05.24 20:33)<br/> : <input type="text" name="install_date"  id="install_date_input"><br/>
-				block_date(ex. 21.05.24 21:03)<br/> : <input type="text" name="block_date"  id="block_date_input"><br/>
-				pw : <input type="password" name="pw" required><br/>
+				mobile_size(num) : <input type="text" name="mobile_size" value="305" id="mobile_size_input"><br />
+				device_maker : <input type="text" name="device_maker" id="device_maker_input"><br />
+				device_model : <input type="text" name="device_model" id="device_model_input"><br />
+				device_os : <input type="text" name="device_os" id="device_os_input"><br />
+				install_date(ex. 21.05.24 20:33)<br /> : <input type="text" name="install_date"
+					id="install_date_input"><br />
+				block_date(ex. 21.05.24 21:03)<br /> : <input type="text" name="block_date" id="block_date_input"><br />
+				pw : <input type="password" name="pw" required><br />
 				<input type="submit" value="저장">
-			<br/><br/>
+				<br /><br />
 				log : <input type="text" name="log" id="log_input" readonly>
 			</form>
 			<div style="border: 1px solid black;">
 				<form action="#" onsubmit="return false">
 					<input type="radio" name="log_status" value="block" checked>카메라 차단 (gray)
 					<input type="radio" name="log_status" value="install">최초 설치 (red)
-					<br/>
-					시간 기록(ex. 21.05.24 21:03) : <textarea name="log_contents" id="log_contents_input"></textarea><br/>
+					<br />
+					시간 기록(ex. 21.05.24 21:03) : <textarea name="log_contents" id="log_contents_input"></textarea><br />
 					<button onclick="setting_log();">기본세팅(상단 기록내용)</button>
-					<input type="submit" value="추가"	onclick="add_log();">
+					<input type="submit" value="추가" onclick="add_log();">
 					<button onclick="document.getElementById('log_input').value = '';">초기화</button>
 				</form>
 			</div>
 		</div>
 		<script type="text/javascript">
-			        // Get the modal
-        var modal = document.getElementById('myModal');
- 
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
- 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];                                          
- 
-        // When the user clicks on the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
- 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
- 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+			// Get the modal
+			var modal = document.getElementById('myModal');
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal 
+			btn.onclick = function () {
+				modal.style.display = "block";
+			}
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function () {
+				modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
 		</script>
- 
-    </div>
-	</body>
+
+	</div>
+</body>
+
 </html>
