@@ -1,1 +1,1 @@
-{ "root": "public", "clean_urls": false }
+{ "root": "./", "clean_urls": false }
