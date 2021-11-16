@@ -1,1 +1,0 @@
-web: mv !(public) public
